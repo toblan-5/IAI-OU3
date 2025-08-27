@@ -95,8 +95,8 @@ X_test_pearson  = X_test[top_features]
 svm_clf.fit(X_train_pearson, y_train)
 y_pred_pearson = svm_clf.predict(X_test_pearson)
 
-acc_pearson = accuracy_score(y_test, y_pred_pearson)
-print(f"\n Pearson correlation accuracy: {acc_pearson:.4f}")
+accuracy_pearson = accuracy_score(y_test, y_pred_pearson)
+print(f"\n Pearson correlation accuracy: {accuracy_pearson:.4f}")
 # %%
 model = LinearSVC()
 
@@ -113,8 +113,8 @@ X_test_rfe  = X_test[rfe_features]
 svm_clf.fit(X_train_rfe, y_train)
 y_pred_rfe = svm_clf.predict(X_test_rfe)
 
-acc_rfe = accuracy_score(y_test, y_pred_rfe)
-print(f"\nRFE accuracy: {acc_rfe:.4f}")
+accuracy_rfe = accuracy_score(y_test, y_pred_rfe)
+print(f"\nRFE accuracy: {accuracy_rfe:.4f}")
 # %%
 lasso = LogisticRegression(penalty="l1", solver="liblinear")
 lasso.fit(X_train, y_train)
@@ -132,8 +132,8 @@ X_test_lasso  = X_test[lasso_features]
 svm_clf.fit(X_train_lasso, y_train)
 y_pred_lasso = svm_clf.predict(X_test_lasso)
 
-acc_lasso = accuracy_score(y_test, y_pred_lasso)
-print(f"\nLASSO accuracy: {acc_lasso:.4f}")
+accuracy_lasso = accuracy_score(y_test, y_pred_lasso)
+print(f"\nLASSO accuracy: {accuracy_lasso:.4f}")
 #%%
 decisiontree = DecisionTreeClassifier(random_state=123456)
 decisiontree.fit(X_train, y_train)
